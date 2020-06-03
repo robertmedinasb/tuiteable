@@ -14,4 +14,16 @@ class User < ApplicationRecord
 
     user
   end
+
+
+  ## Association
+  has_many :tweets, foreign_key: :owner_id
+  has_many :providers
+  has_many :comments
+  has_many :commented_tweets, through: :comments, source: :tweet
+  has_many :liked_tweets, join_table: "likes", class_name: "Tweet"
+
+  ## Validation
+  validates :username, :email, presence: true, uniqueness: true
+
 end
