@@ -1,0 +1,28 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body * {
+  font-family: "Roboto", sans-serif;
+}
+.home {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 0.5fr;
+}
+.home-section {
+  border: 1px solid black;
+}
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  list-style: none;
+}
+
+$bg-color: #1d2128;
+$font-color: #ffffff;
