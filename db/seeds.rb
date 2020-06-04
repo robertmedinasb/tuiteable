@@ -58,3 +58,15 @@ puts 'Creating Fakes likes '
   end
 end
 puts 'Fakes likes was created...'
+puts 'Creating Fakes comments'
+80.times do
+  body = Faker::Lorem.paragraph
+  user = User.all.sample
+  tuit = Tuit.all.sample
+  begin
+    Comment.create!(user: user, tuit: tuit, body: body)
+  rescue StandardError => e
+    puts "Error, Comment was not created, because#{e} "
+  end
+end
+puts 'Fakes comments was created...'
