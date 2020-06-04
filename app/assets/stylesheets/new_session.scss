@@ -95,6 +95,29 @@ $font-color: #ffffff;
   background: #1da1f2;
   border-radius: 100px;
   margin-top: 10px;
+  animation: login_animation infinite 2s;
+}
+.actions input:hover {
+  animation: none;
+  background: #ffffff;
+  color: #1da1f2;
+}
+@keyframes login_animation {
+  0% {
+    -webkit-box-shadow: 0px 4px 4px 0px rgba(154, 199, 241, 0.5);
+    -moz-box-shadow: 0px 4px 4px 0px rgba(154, 199, 241, 0.5);
+    box-shadow: 0px 4px 4px 0px rgba(154, 199, 241, 0.5);
+  }
+  50% {
+    -webkit-box-shadow: 0px 4px 6px 0px rgba(154, 199, 241, 0.75);
+    -moz-box-shadow: 0px 4px 6px 0px rgba(154, 199, 241, 0.75);
+    box-shadow: 0px 4px 6px 0px rgba(154, 199, 241, 0.75);
+  }
+  100% {
+    -webkit-box-shadow: 0px 4px 4px 0px rgba(154, 199, 241, 0.5);
+    -moz-box-shadow: 0px 4px 4px 0px rgba(154, 199, 241, 0.5);
+    box-shadow: 0px 4px 4px 0px rgba(154, 199, 241, 0.5);
+  }
 }
 .actions-face {
   text-align: center;
@@ -145,7 +168,11 @@ $font-color: #ffffff;
   border-color: #1da1f2;
   border-width: 3px;
   text-decoration: none;
+  transition: all 0.5s;
   background-color: rgba(153, 155, 158, 0.25);
+}
+.signup-side-bar a:hover {
+  background-color: #ffffff;
 }
 /*------------SIGN UP FORM SOME FEATURES ADDEDS ------------------------*/
 section.index > .new_user {

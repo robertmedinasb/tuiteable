@@ -21,13 +21,13 @@
           <%= f.submit "Log In" %>
         </div>
         <div class="actions-face">
-          <%= link_to  root_path do%>
+          <%= link_to  user_facebook_omniauth_authorize_path do%>
             <i class="fab fa-facebook-f"></i>
             Use Facebook
           <% end %>
         </div>
         <div class="actions-git">
-          <%= link_to  root_path do%>
+          <%= link_to  user_github_omniauth_authorize_path do%>
             <i class="fab fa-github"></i>
             Use Github
           <% end %>
@@ -35,7 +35,7 @@
       <% end %>
       <div class="signup-side-bar">
         <p>Not registered yet?</p>
-        <%= link_to  "Sign Up with email", new_user_registration_path %>
+        <%= link_to  "Sign Up with email", new_user_registration_path  %>
         <%# <%= render "devise/shared/links" %>
       </div>
     </div>
