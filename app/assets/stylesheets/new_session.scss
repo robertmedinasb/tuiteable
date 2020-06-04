@@ -1,0 +1,241 @@
+$bg-color: #1d2128;
+$font-color: #ffffff;
+.wrap-side-bar-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 7px;
+  width: 100%;
+  background: $bg-color;
+}
+.side-bar-login {
+  background-color: rgba(153, 155, 158, 0.25);
+  padding: 28px;
+}
+.side-bar-login h2 {
+  display: grid;
+  font-size: 20px;
+  gap: 10px;
+  grid-template-rows: repeat(2, auto);
+  justify-content: center;
+}
+.signup-side-bar {
+  text-align: center;
+  color: $font-color;
+}
+.signup-side-bar {
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+  padding-left: 10px;
+}
+.new_user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.field {
+  color: white;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.remember {
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.remember label {
+  margin-left: 5px;
+}
+.field input {
+  background: #ffffff;
+  border-radius: 15px;
+  height: 40px;
+  border-style: none;
+  padding: 0 8px;
+  cursor: pointer;
+}
+.field label {
+  align-self: flex-start;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.footer-side-bar {
+  color: $font-color;
+  text-align: center;
+  max-width: 170px;
+  margin: 0 auto;
+  border-top: 1px solid #ffffff;
+  padding: 20px 14px 14px 14px;
+  font-size: 14px;
+  line-height: 16px;
+}
+.actions {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.actions input {
+  color: white;
+  width: 150px;
+  font-weight: bolder;
+  font-size: 17px;
+  height: 35px;
+  border-style: none;
+  background: #1da1f2;
+  border-radius: 100px;
+  margin-top: 10px;
+}
+.actions-face {
+  text-align: center;
+  margin-top: 10px;
+  width: 150px;
+  height: 35px;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #1d5cd7;
+}
+.actions-face a {
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+  border-style: none;
+  border-radius: 100px;
+}
+.actions-git {
+  text-align: center;
+  margin-top: 10px;
+  width: 150px;
+  height: 35px;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #191a1b;
+}
+.actions-git a {
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+  border-style: none;
+  border-radius: 100px;
+}
+.signup-side-bar a {
+  color: #1da1f2;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  border-radius: 100px;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  border-style: solid;
+  border-color: #1da1f2;
+  border-width: 3px;
+  text-decoration: none;
+  background-color: rgba(153, 155, 158, 0.25);
+}
+/*------------SIGN UP FORM SOME FEATURES ADDEDS ------------------------*/
+section.index > .new_user {
+  width: 100%;
+  justify-content: center;
+}
+.field-signup {
+  padding-left: 40px;
+  max-width: 490px;
+  width: 80%;
+  color: white;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.field-signup input,
+.field-signup textarea {
+  width: 60%;
+  background: #ffffff;
+  border-radius: 15px;
+  height: 40px;
+  border-style: none;
+  padding: 0 8px;
+}
+.field-signup textarea {
+  height: 80px;
+}
+.field-signup label,
+.field-signup-file label,
+.field-signup-bio label {
+  max-width: 90px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.field-signup label::after,
+.field-signup-file label::after,
+.field-signup-bio label::after {
+  content: ":";
+}
+label em {
+  width: 100%;
+}
+div.sign_up_button input {
+  padding: 0 10px;
+  width: fit-content;
+}
+.field-signup-file {
+  padding-left: 40px;
+  max-width: 490px;
+  width: 80%;
+  color: white;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.field-signup-file input#user_avatar {
+  background: transparent;
+  width: 60%;
+}
+#user_avatar::-webkit-file-upload-button {
+  background: transparent;
+  border: 1px solid #1da1f2;
+  color: #1da1f2;
+  cursor: pointer;
+  height: 30px;
+  border-radius: 10px;
+  font-weight: 600;
+  padding: 0 15px;
+  transition: all 0.5s;
+}
+#user_avatar::-webkit-file-upload-button:hover {
+  color: #ffffff;
+  background: #1da1f2;
+}
+.field-signup-bio {
+  padding-left: 40px;
+  max-width: 490px;
+  width: 80%;
+  color: white;
+  margin-top: 10px;
+}
+.field-signup-bio label,
+.field-signup-bio textarea {
+  width: 100%;
+}
+.field-signup-bio textarea {
+  height: 120px;
+  border-radius: 15px;
+  margin-top: 10px;
+  padding: 10px;
+}

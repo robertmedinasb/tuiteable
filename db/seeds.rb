@@ -67,20 +67,19 @@ puts 'Creating Fakes comments'
   Comment.create!(user: user, tuit: tuit, body: body)
 end
 puts 'Fakes comments was created...'
-# User.all.each do |user|
-#   user.avatar.attach(io: File.open(Dir.pwd + '/public/avatars/diego.png'),
-#                      filename: 'diego.png', content_type: 'image/png')
-# end
-images = []
-Dir.foreach(Dir.pwd + '/public/avatars/') do |image|
-  next if image == '.' || image == '..'
+User.all.each do |user|
+  user.avatar.attach(io: File.open(Dir.pwd + '/public/avatars/diego.png'),
+                     filename: 'diego.png', content_type: 'image/png')
+end
+#  Dir.foreach(Dir.pwd + '/public/avatars/') do |image|
+#   next if image == '.' || image == '..'
 
-  tmp_hash = {}
-  tmp_hash[:io] = File.open(Dir.pwd + '/public/avatars/' + image)
-  tmp_hash[:filename] = image.to_s
-  tmp_hash[:content_type] = 'image/png'
-  images << tmp_hash
-end
-User.all[0..7].each do |user|
-  user.avatar.attach(images.sample)
-end
+#   tmp_hash = {}
+#   tmp_hash[:io] = File.open(Dir.pwd + '/public/avatars/' + image)
+#   tmp_hash[:filename] = image.to_s
+#   tmp_hash[:content_type] = 'image/png'
+#   images << tmp_hash
+# end
+# User.all[0..7].each do |user|
+#   user.avatar.attach(images.sample)
+# end

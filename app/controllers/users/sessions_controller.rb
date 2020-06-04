@@ -19,16 +19,17 @@ class Users::SessionsController < Devise::SessionsController
       respond_with resource, location: after_sign_in_path_for(resource)
     else
       flash[:alert] = 'User and password not matched.'
-      redirect_to root_path
-      # Authentication fails, redirect the user to the root page
+      respond_to do |format|
+        format.js
+      end
     end
-     # end
+  end
+  # end
 
-     # DELETE /resource/sign_out
-     # def destroy
-     #   super
-   end
-
+  # DELETE /resource/sign_out
+  # def destroy
+  #   super
+  # end
   # protected
 
   # If you have extra params to permit, append them to the sanitizer.
