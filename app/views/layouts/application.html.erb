@@ -11,6 +11,8 @@
       src="https://use.fontawesome.com/releases/v5.13.0/js/all.js"
       data-auto-a11y="true"
     ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,300&display=swap" rel="stylesheet">
   </head>
   <body>
     <main class="home">
@@ -20,7 +22,7 @@
       <section class="index">
         <%= yield %>
       </section>
-      <section class="side-bar">
+      <section class="side-bar" id="side-bar">
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
         <% unless current_page?(new_user_registration_path) %>

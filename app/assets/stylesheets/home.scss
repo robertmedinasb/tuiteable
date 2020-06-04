@@ -15,14 +15,18 @@ body {
 }
 .home {
   display: grid;
-  grid-template-columns: 0.6fr 1fr 0.6fr;
+  width: 85%;
+  margin: 0 auto;
+  justify-content: center;
+  grid-template-columns: 15% 60% 25%;
 }
 .home-section {
   border: 1px solid black;
 }
-.side-nav {
+.nav {
   background: $bg-color;
 }
+
 .nav-links {
   display: flex;
   flex-direction: column;
@@ -58,95 +62,4 @@ h2 {
   font-size: 16px;
   line-height: 20px;
   text-align: center;
-}
-.field {
-  color: white;
-  margin-top: 10px;
-}
-.field input {
-  background: #ffffff;
-  border-radius: 15px;
-  height: 40px;
-  border-style: none;
-}
-.field label {
-  font-style: normal;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 20px;
-}
-.wrap-side-bar-login {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 7px;
-  background: $bg-color;
-}
-.side-bar-login {
-  background-color: rgba(153, 155, 158, 0.25);
-  padding: 10px 15px 5px 15px;
-}
-.footer-side-bar {
-  color: $font-color;
-  text-align: center;
-  padding: 30px 14px 14px 14px;
-  font-size: 12px;
-  line-height: 16px;
-}
-.actions {
-  text-align: center;
-}
-.actions input {
-  color: white;
-  width: 68px;
-  height: 40px;
-  border-style: none;
-  background: #1da1f2;
-  border-radius: 100px;
-  margin-top: 10px;
-}
-.actions-face {
-  text-align: center;
-}
-.actions-face input {
-  color: white;
-  width: 118px;
-  height: 28px;
-  border-style: none;
-  background: #1d5cd7;
-  border-radius: 100px;
-  margin-top: 10px;
-}
-.actions-git {
-  text-align: center;
-}
-.actions-git input {
-  color: white;
-  width: 94px;
-  height: 28px;
-  border-style: none;
-  background: #191a1b;
-  border-radius: 100px;
-  margin-top: 10px;
-}
-.signup-side-bar {
-  text-align: center;
-  color: $font-color;
-}
-.signup-side-bar p {
-  margin-top: 25px;
-  padding-left: 10px;
-}
-.signup-side-bar a {
-  color: #1da1f2;
-  width: 130px;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 20px;
-  border-radius: 100px;
-  border-style: solid;
-  border-color: #1da1f2;
-  border-width: 3px;
-  text-decoration: none;
-  background-color: rgba(153, 155, 158, 0.25);
 }
