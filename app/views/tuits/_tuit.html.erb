@@ -6,8 +6,8 @@
   <div class="tuit-body">
     <div class="body-author">
       <strong class="author-name"><%= tuit.user.name %></strong>
-      <span class="author-username">@<%=tuit.user.username %></span>
-      <span class="info-date">- <%=tuit.created_at.strftime("%b, %d") %></span>
+      <span class="author-username grey_text">@<%=tuit.user.username %></span>
+      <span class="info-date grey_text">- <%=tuit.created_at.strftime("%b, %d") %></span>
     </div>
     <div class="body-text">
       <p><%= tuit.body  %></p>

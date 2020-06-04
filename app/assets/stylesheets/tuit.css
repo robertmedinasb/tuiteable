@@ -2,6 +2,10 @@
     display: flex;
     padding: 5px;
 }
+.show__tuit-card {
+    display: flex;
+    padding: 15px;
+}
 .tuit-avatar {
     border-radius: 40px;
     width: 50px;
@@ -22,4 +26,28 @@
 
 .body-info {
     margin: 7px 0;
+}
+
+.tuit-body {
+    width: 600px;
+}
+
+.show__body-info {
+    margin: 7px 0;
+    padding: 7px 0;
+    width: 100%;
+    border-top: 1px solid #999B9E;
+}
+.grey_text {
+    color: #999B9E;
+}
+
+.show__body-text p{
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.show__card {
+    display: grid;
+    
 }

@@ -16,25 +16,10 @@ a {
     border-right: 1px solid #999B9E;
 }
 .back_nav, .profile__details, .profile__content{
-    border-top: 1px solid #999B9E;
-    border-bottom: 1px solid #999B9E;
+    /*border-top: 1px solid #999B9E;*/
+    border-bottom: 2px solid #999B9E;
 }
 
-.back_nav {
-    padding-left: 15px;
-    display: flex;
-    align-items: center;
-}
-
-.back_nav__link{
-    width: 300px;
-    font-weight: bold;
-}
-
-.back_nav__link__text {
-    margin-left: 35px;
-    font-size: 20px;
-}
 .profile__container {
     display: grid;
     grid-template-columns: 1fr;
