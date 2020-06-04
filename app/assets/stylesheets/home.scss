@@ -6,8 +6,12 @@
   padding: 0;
   box-sizing: border-box;
 }
-body * {
+body {
   font-family: "Roboto", sans-serif;
+  background-color: #1d2128;
+}
+body * {
+  color: white;
 }
 .home {
   display: grid;

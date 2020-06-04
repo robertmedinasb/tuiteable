@@ -40,6 +40,7 @@ puts 'Creating fakes tuits...'
   tuit = {}
   tuit[:body] = Faker::Lorem.paragraph
   tuit[:user] = User.all.sample
+  tuit[:created_at] = rand(1..6).days.ago
   begin
     tuit_test = Tuit.create!(tuit)
   rescue StandardError
@@ -63,10 +64,6 @@ puts 'Creating Fakes comments'
   body = Faker::Lorem.paragraph
   user = User.all.sample
   tuit = Tuit.all.sample
-  begin
-    Comment.create!(user: user, tuit: tuit, body: body)
-  rescue StandardError => e
-    puts "Error, Comment was not created, because#{e} "
-  end
+  Comment.create!(user: user, tuit: tuit, body: body)
 end
 puts 'Fakes comments was created...'
