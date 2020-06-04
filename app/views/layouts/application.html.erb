@@ -19,11 +19,13 @@
       <section class="side-bar">
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
-        <% if user_signed_in? %>
-          <span>Welcome, <%= current_user.username %></span>
-          <%= link_to  "Log out", destroy_user_session_path, method: :delete %>
-        <% else %>
-          <%= render  "devise/sessions/new" %>
+        <% unless current_page?(new_user_registration_path) %>
+          <% if user_signed_in? %>
+            <span>Welcome, <%= current_user.username %></span>
+            <%= link_to  "Log out", destroy_user_session_path, method: :delete %>
+          <% else %>
+            <%= render  "devise/sessions/new" %>
+          <% end %>
         <% end %>
       </section>
     </main>

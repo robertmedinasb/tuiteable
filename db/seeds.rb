@@ -21,7 +21,7 @@ puts 'Creating a Admin user...'
 User.create!(admin_user_test)
 puts 'Admin user was created !!'
 puts 'Creating fakes users...'
-20.times do
+8.times do
   username = Faker::Internet.username
   email = Faker::Internet.email(name: username)
   name = Faker::Name.name
@@ -67,3 +67,7 @@ puts 'Creating Fakes comments'
   Comment.create!(user: user, tuit: tuit, body: body)
 end
 puts 'Fakes comments was created...'
+User.all.each do |user|
+  user.avatar.attach(io: File.open(Dir.pwd + '/public/avatars/diego.png'),
+                     filename: 'diego.png', content_type: 'image/png')
+end
