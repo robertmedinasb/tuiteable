@@ -71,3 +71,15 @@ User.all.each do |user|
   user.avatar.attach(io: File.open(Dir.pwd + '/public/avatars/diego.png'),
                      filename: 'diego.png', content_type: 'image/png')
 end
+# Dir.foreach(Dir.pwd + '/public/avatars/') do |image|
+#   tmp_hash = {}
+#   tmp_hash[:io] = File.open(Dir.pwd + '/public/avatars/' + image)
+#   tmp_hash[:filename] = image.to_s
+#   tmp_hash[:content_type] = 'image/png'
+#   images << tmp_hash
+# end
+# User.all.each do |user|
+#   p image
+#   user.avatar.attach(io: File.open(Dir.pwd + '/public/avatars/' + image),
+#                      filename: image.to_s, content_type: 'image/png')
+# end
