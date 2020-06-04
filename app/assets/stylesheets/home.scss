@@ -1,6 +1,8 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+$bg-color: #1d2128;
+$font-color: #ffffff;
 * {
   margin: 0;
   padding: 0;
@@ -11,10 +13,13 @@ body * {
 }
 .home {
   display: grid;
-  grid-template-columns: 0.5fr 1fr 0.5fr;
+  grid-template-columns: 0.6fr 1fr 0.6fr;
 }
 .home-section {
   border: 1px solid black;
+}
+.side-nav {
+  background: $bg-color;
 }
 .nav-links {
   display: flex;
@@ -23,6 +28,123 @@ body * {
   text-align: center;
   list-style: none;
 }
-
-$bg-color: #1d2128;
-$font-color: #ffffff;
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+}
+.nav-logo {
+  text-align: center;
+  margin-top: 17px;
+}
+.nav-icon {
+  margin-right: 10px;
+}
+.nav-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+h2 {
+  color: white;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+}
+.field {
+  color: white;
+  margin-top: 10px;
+}
+.field input {
+  background: #ffffff;
+  border-radius: 15px;
+  height: 40px;
+  border-style: none;
+}
+.field label {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+}
+.wrap-side-bar-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 7px;
+  background: $bg-color;
+}
+.side-bar-login {
+  background-color: rgba(153, 155, 158, 0.25);
+  padding: 10px 15px 5px 15px;
+}
+.footer-side-bar {
+  color: $font-color;
+  text-align: center;
+  padding: 30px 14px 14px 14px;
+  font-size: 12px;
+  line-height: 16px;
+}
+.actions {
+  text-align: center;
+}
+.actions input {
+  color: white;
+  width: 68px;
+  height: 40px;
+  border-style: none;
+  background: #1da1f2;
+  border-radius: 100px;
+  margin-top: 10px;
+}
+.actions-face {
+  text-align: center;
+}
+.actions-face input {
+  color: white;
+  width: 118px;
+  height: 28px;
+  border-style: none;
+  background: #1d5cd7;
+  border-radius: 100px;
+  margin-top: 10px;
+}
+.actions-git {
+  text-align: center;
+}
+.actions-git input {
+  color: white;
+  width: 94px;
+  height: 28px;
+  border-style: none;
+  background: #191a1b;
+  border-radius: 100px;
+  margin-top: 10px;
+}
+.signup-side-bar {
+  text-align: center;
+  color: $font-color;
+}
+.signup-side-bar p {
+  margin-top: 25px;
+  padding-left: 10px;
+}
+.signup-side-bar a {
+  color: #1da1f2;
+  width: 130px;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  border-radius: 100px;
+  border-style: solid;
+  border-color: #1da1f2;
+  border-width: 3px;
+  text-decoration: none;
+  background-color: rgba(153, 155, 158, 0.25);
+}
