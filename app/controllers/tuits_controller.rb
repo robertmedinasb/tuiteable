@@ -2,6 +2,6 @@
 
 class TuitsController < ApplicationController
   def explorer
-    @tuits = Tuit.all
+    @tuits = Tuit.all.order(created_at: :desc)
   end
 end

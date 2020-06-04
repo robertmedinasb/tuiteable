@@ -11,7 +11,7 @@
       <p><%= tuit.body  %></p>
     </div>
     <div class="body-info">
-      <div class="info-date"><%= tuit.created_at %></div>
+      <div class="info-date"><%= tuit.created_at.strftime("%b %y") %></div>
       <div class="info-reactions">
         <%= link_to  root_path , remote: true do%>
           <i class="fas fa-comment "></i>
