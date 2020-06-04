@@ -1,0 +1,50 @@
+<div class="profile__container">
+  <div class="back_nav">
+    <%= render partial: "/partials/back_button", locals: { url: url_for(root_path), title: 'Back to Explorer'  }%>
+  </div>
+  <div class="profile__details">
+      <div class="profile__header">
+        <div class="profile__picture_container">
+          <img  class="profile__picture" src="<%=url_for(@user.avatar)%>  " alt="">
+        </div>
+        <h1><%=@user.name %></h1>
+        <p>@<%=@user.username %></p>
+      </div>
+    <div class="profile__bio">
+      <p><%=@user.bio %></p>
+    </div>
+    <div class="profile__footer">
+      <div class="profile__footer__location">
+        <img src="/assets/location.png" alt="">
+        <%=@user.location %>
+      </div>
+      <div class="profile__footer__date">
+        <img src="/assets/calendar.png" alt="">
+        Joined <%=@user.created_at.strftime("%B, %Y") %>
+      </div>
+    </div>
+    <% if current_user.id == @user.id %>
+      <div class="profile__edit__button">
+        <button class="tt_btn">Edit profile</button>
+      </div>
+  <% end %>
+  </div>
+
+  <div class="profile__nav">
+    <p>Tuits</p>
+    <p>Likes</p>
+  </div>
+
+  <div class="profile__content">
+    <div class="profile__tuits">
+      <% if @tuits.empty? %>
+        <!-- TODO: remove this line -->
+        <center><h2>No tuits yet</h2></center>
+      <% else %>
+          <%@tuits.each do |tuit| %>
+            <%=render partial: "/tuits/tuit", locals: {tuit: tuit}%>
+          <%end %>
+      <% end %>
+    </div>
+  </div>
+</div>

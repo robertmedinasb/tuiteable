@@ -2,6 +2,7 @@
 
 class TuitsController < ApplicationController
   def explorer
-    @tuits = Tuit.all
+    # @tuits = Tuit.all
+    # @tuits
   end
 end
