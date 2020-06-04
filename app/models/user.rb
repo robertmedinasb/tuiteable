@@ -6,7 +6,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :likes, through: :tuits
+  has_many :comments, through: :tuits
   has_many :tuits
   has_many :likes
-  has_many :comments, through: :tuits
+  has_many :comments
+  has_one_attached :avatar
 end
