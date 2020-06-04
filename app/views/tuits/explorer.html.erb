@@ -1,1 +1,4 @@
 <h1>Explorer</h1>
+<% @tuits.each do |tuit| %>
+  <%= render partial: "tuits/tuit", locals:{tuit:tuit} %>
+<% end %>

@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
 class TuitsController < ApplicationController
-  def explorer; end
+  def explorer
+    @tuits = Tuit.all
+  end
 end
