@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   get 'users/profile/:id', to: 'users#show',as: 'user'
   get 'tuits/index'
   resources :tuits, only: [:show]
+  namespace :api do
+    resources :comments, only: [:index, :create, :destroy]
+  end
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     omniauth_callbacks: 'users/omniauth_callbacks'
