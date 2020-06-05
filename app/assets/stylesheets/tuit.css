@@ -1,0 +1,61 @@
+.tuit-card {
+  display: flex;
+  padding: 15px;
+  width: 100%;
+  position: relative;
+}
+.show__tuit-card {
+  display: flex;
+  padding: 15px;
+}
+.tuit-avatar {
+  border-radius: 40px;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 15px;
+  margin-top: 10px;
+}
+.tuit-avatar img {
+  height: 50px;
+}
+
+.body-author {
+  margin: 7px 0;
+}
+
+.body-info {
+  margin: 7px 0;
+}
+
+.tuit-body {
+  width: 600px;
+}
+
+.show__body-info {
+  margin: 7px 0;
+  padding: 7px 0;
+  width: 100%;
+  border-top: 1px solid #999b9e;
+}
+.grey_text {
+  color: #999b9e;
+}
+
+.show__body-text p {
+  font-size: 21px;
+  margin-bottom: 10px;
+}
+
+.show__card {
+  display: grid;
+}
+.info-reactions {
+  margin: 10px 0 17px 0;
+}
+.like {
+  margin-left: 100px;
+}

@@ -1,4 +1,6 @@
-<h1>Explorer</h1>
+<div class="back_nav">
+  <%= render partial: "/partials/back_button", locals: { url: nil, title: 'Explorer'  }%>
+</div>
 <% @tuits.each do |tuit| %>
   <%= render partial: "tuits/tuit", locals:{tuit:tuit} %>
 <% end %>

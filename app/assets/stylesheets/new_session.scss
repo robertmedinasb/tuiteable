@@ -4,13 +4,14 @@ $font-color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 7px;
+  max-width: 320px;
   width: 100%;
   background: $bg-color;
+  padding: 30px 0;
+  background-color: rgba(153, 155, 158, 0.25);
 }
 .side-bar-login {
-  background-color: rgba(153, 155, 158, 0.25);
-  padding: 28px;
+  width: 100%;
 }
 .side-bar-login h2 {
   display: grid;
@@ -43,6 +44,8 @@ $font-color: #ffffff;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 90%;
+  max-width: 200px;
 }
 .remember {
   flex-direction: row;
@@ -51,13 +54,17 @@ $font-color: #ffffff;
 }
 .remember label {
   margin-left: 5px;
+  width: 90%;
 }
 .field input {
+  width: 100%;
   background: #ffffff;
   border-radius: 15px;
   height: 40px;
   border-style: none;
   padding: 0 8px;
+}
+.field input[type="submit"] {
   cursor: pointer;
 }
 .field label {
@@ -95,6 +102,29 @@ $font-color: #ffffff;
   background: #1da1f2;
   border-radius: 100px;
   margin-top: 10px;
+  animation: login_animation infinite 2s;
+}
+.actions input:hover {
+  animation: none;
+  background: #ffffff;
+  color: #1da1f2;
+}
+@keyframes login_animation {
+  0% {
+    -webkit-box-shadow: 0px 4px 4px 0px rgba(154, 199, 241, 0.5);
+    -moz-box-shadow: 0px 4px 4px 0px rgba(154, 199, 241, 0.5);
+    box-shadow: 0px 4px 4px 0px rgba(154, 199, 241, 0.5);
+  }
+  50% {
+    -webkit-box-shadow: 0px 4px 6px 0px rgba(154, 199, 241, 0.75);
+    -moz-box-shadow: 0px 4px 6px 0px rgba(154, 199, 241, 0.75);
+    box-shadow: 0px 4px 6px 0px rgba(154, 199, 241, 0.75);
+  }
+  100% {
+    -webkit-box-shadow: 0px 4px 4px 0px rgba(154, 199, 241, 0.5);
+    -moz-box-shadow: 0px 4px 4px 0px rgba(154, 199, 241, 0.5);
+    box-shadow: 0px 4px 4px 0px rgba(154, 199, 241, 0.5);
+  }
 }
 .actions-face {
   text-align: center;
@@ -145,7 +175,11 @@ $font-color: #ffffff;
   border-color: #1da1f2;
   border-width: 3px;
   text-decoration: none;
+  transition: all 0.5s;
   background-color: rgba(153, 155, 158, 0.25);
+}
+.signup-side-bar a:hover {
+  background-color: #ffffff;
 }
 /*------------SIGN UP FORM SOME FEATURES ADDEDS ------------------------*/
 section.index > .new_user {
@@ -238,4 +272,12 @@ div.sign_up_button input {
   border-radius: 15px;
   margin-top: 10px;
   padding: 10px;
+}
+div.coming-soon {
+  margin: 40px auto;
+  width: fit-content;
+  max-width: 210px;
+}
+div.coming-soon img {
+  width: 100%;
 }
