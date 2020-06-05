@@ -4,6 +4,13 @@
   </div>
   <ul class="nav-links">
     <li class="nav-list"><img class="nav-icon" src="/explorer.svg" alt="explorer"><%= link_to  "Explorer", root_path %></li>
-    <li class="nav-list"><img class="nav-icon" src="/profile.svg" alt="profile"><%= link_to  "Profile", root_path %></li>
+          <% if user_signed_in? %>            
+           <li class="nav-list"><img class="nav-icon" src="/profile.svg" alt="profile"><%= link_to  "Profile", "/users/profile/10", :method => :get %></li> 
+          <% end %>
+    
   </ul>
+          <% if user_signed_in? %>            
+            <%= render  "/layouts/logout" %>
+          <% end %>
+  
 </nav>

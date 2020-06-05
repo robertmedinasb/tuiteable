@@ -19,11 +19,10 @@ $font-color: #ffffff;
   grid-template-rows: repeat(2, auto);
   justify-content: center;
 }
+
 .signup-side-bar {
   text-align: center;
   color: $font-color;
-}
-.signup-side-bar {
   display: flex;
   flex-direction: column;
   margin-top: 25px;
@@ -73,7 +72,6 @@ $font-color: #ffffff;
   text-align: center;
   max-width: 170px;
   margin: 0 auto;
-  border-top: 1px solid #ffffff;
   padding: 20px 14px 14px 14px;
   font-size: 14px;
   line-height: 16px;
@@ -238,4 +236,25 @@ div.sign_up_button input {
   border-radius: 15px;
   margin-top: 10px;
   padding: 10px;
+}
+
+/*----- log out ---*/
+.nav-logout {
+  text-align: center;
+  padding-top: 50px;
+}
+.nav-logout a {
+  color: #e0245e;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  border-radius: 100px;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  border-style: solid;
+  border-color: #e0245e;
+  border-width: 3px;
+  text-decoration: none;
+  background-color: $bg-color;
 }

@@ -1,4 +1,8 @@
+<div class="explorer-header">
 <h1>Explorer</h1>
+</div>
+<%= render partial: "tuits/new-tuit", object: @user %>
+
 <% @tuits.each do |tuit| %>
   <%= render partial: "tuits/tuit", locals:{tuit:tuit} %>
 <% end %>

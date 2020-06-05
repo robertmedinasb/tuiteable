@@ -1,4 +1,5 @@
-<div id="tuit-card">
+<link rel="stylesheet" href="/assets/tuit.css">
+<div class="tuit-card">
   <div class="tuit-avatar">
     <img src="<%=(url_for(tuit.user.avatar)) %>" alt="">
   </div>
@@ -6,6 +7,7 @@
     <div class="body-author">
       <strong class="author-name"><%= tuit.user.name %></strong>
       <span class="author-username">@<%=tuit.user.username %></span>
+      <span class="info-date">- <%=tuit.created_at.strftime("%b, %d") %></span>
     </div>
     <div class="body-text">
       <p><%= tuit.body  %></p>

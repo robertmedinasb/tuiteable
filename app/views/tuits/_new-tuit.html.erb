@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="/assets/tuit.css">
+<div class="tuit-card">
+  <div class="tuit-avatar">
+    <img src="<%=url_for(@user.avatar)%>" alt="User avatar">
+  </div>
+  <div class="tuit-body">   
+
+    <%= form_for @ntuit do |f| %>
+ 
+ <%= f.text_field :body %><br />
+ 
+  <%= f.submit %>
+<% end %>
+
+  </div>
+</div>
