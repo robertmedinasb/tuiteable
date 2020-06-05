@@ -1,14 +1,8 @@
-<div id="tuit-card">
-  <div class="tuit-avatar">
-    <img src="<%=(url_for(tuit.user.avatar)) %>" alt="">
-  </div>
-  <div class="tuit-body">
-    <div class="body-author">
-      <strong class="author-name"><%= tuit.user.name %></strong>
-      <span class="author-username">@<%=tuit.user.username %></span>
-    </div>
-    <div class="body-text">
-      <p><%= tuit.body  %></p>
+<link rel="stylesheet" href="/assets/tuit.css">
+<a href="<%=tuit_path(tuit) %>">
+  <div class="tuit-card">
+    <div class="tuit-avatar">
+      <img src="<%=(url_for(tuit.user.avatar)) %>" alt="">
     </div>
     <div class="body-info">
       <div class="info-date"><%= tuit.created_at.strftime("%b %y") %></div>
@@ -21,7 +15,30 @@
           <i class="fas fa-heart "></i>
           <span><%= tuit.likes_count %></span>
         <% end %>
+=======
+    <div class="tuit-body">
+      <div class="body-author">
+        <strong class="author-name"><%= tuit.user.name %></strong>
+        <span class="author-username grey_text">@<%=tuit.user.username %></span>
+        <span class="info-date grey_text">- <%=tuit.created_at.strftime("%b, %d") %></span>
+      </div>
+      <div class="body-text">
+        <p><%= tuit.body  %></p>
+      </div>
+      <div class="body-info">
+        <div class="info-reactions">
+          <%= link_to  root_path , remote: true do%>
+            <i class="fas fa-comment "></i>
+          <% end %>
+          <span><%= tuit.comments_count %></span>
+          <%= link_to  root_path , remote: true do%>
+            <i class="fas fa-heart "></i>
+            <span><%= tuit.likes_count %></span>
+          <% end %>
+        </div>
+>>>>>>> gerard-altamirano
       </div>
     </div>
   </div>
-</div>
+</a>
+

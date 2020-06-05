@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'users/profile(/:id)', to: "users#show"
   get 'tuits/index'
+  resources :tuits, only: [:show]
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     omniauth_callbacks: 'users/omniauth_callbacks'
