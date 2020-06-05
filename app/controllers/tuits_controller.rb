@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class TuitsController < ApplicationController
+  skip_before_action :verify_authenticity_token
   def explorer
     @tuits = Tuit.all.order(created_at: :desc)
   end
@@ -30,12 +31,13 @@ class TuitsController < ApplicationController
   end
 
   def create_comment
-    params.permit(:id, :commenter, :comment)
+    params.permit(:id, :comment)
     @tuit = Tuit.find(params[:id])
-    if @tuit.comments << Comment.new(body: params[:comment], user_id: params[:commenter])
+    # @tuit << Comment.new
+    if Comment.create!(body: params[:comment], user_id: current_user.id, tuit_id: @tuit.id)
       redirect_to tuit_path(@tuit)
     else
-      render json: {ok:false}
+      render json: {ok: false}
     end
   end
 

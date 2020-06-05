@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'users/profile/:id', to: 'users#show',as: 'user'
   get 'tuits/index'
   resources :tuits, only: [:show]
+  post 'tuits/:id/comment', to: 'tuits#create_comment', as: 'comment_tuit'
   namespace :api do
     resources :comments, only: [:index, :create, :destroy]
   end

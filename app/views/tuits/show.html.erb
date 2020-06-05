@@ -30,11 +30,12 @@
       </div>
     </div>
     <% if user_signed_in? %>
-      <form class="tuit__create_comment">
+      <form class="tuit__create_comment" method="post" action="<%= url_for comment_tuit_path(@tuit.id) %>">
         <div class="tuit__create_comment__body">
          <div class="tuit-avatar">
             <img src="<%=(url_for(current_user.avatar)) %>" alt="">
           </div>
+          <input type="hidden" name="comment" value="<%=@tuit.id %>">
           <textarea class="tuit__create_comment__comment" name="comment"  cols="10" rows="10" placeholder="Think before write..."></textarea>
         </div>
         <div class="tuit__create_comment__footer">
