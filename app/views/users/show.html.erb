@@ -30,18 +30,10 @@
     <% end %>
   </div>
   <div class="profile__nav">
-    <p>Tuits</p>
-    <p>Likes</p>
+    <p id="profile_nav_tuits" class="visited"><%= link_to  "tuits", root_path+'users/profile/' + @user.id.to_s %></p>
+    <p id="profile_nav_likes"><%= link_to  "likes", root_path + 'users/profile/' + "#{@user.id.to_s}/liked", remote: true %></p>
   </div>
   <div class="profile__content">
-    <div class="profile__tuits">
-      <% if @tuits.empty? %>
-        <!-- TODO: remove this line -->
-      <% else %>
-        <%@tuits.each do |tuit| %>
-          <%=render partial: "/tuits/tuit", locals: {tuit: tuit}%>
-        <%end %>
-      <% end %>
-    </div>
+    <%= render  "users/profile_tuits", locals:{tuits: @tuits} %>
   </div>
 </div>
