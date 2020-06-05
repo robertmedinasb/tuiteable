@@ -1,8 +1,9 @@
 <div class="explorer-header">
 <h1>Explorer</h1>
 </div>
+<% if user_signed_in? %>
 <%= render partial: "tuits/new-tuit", object: @user %>
-
+<% end %>
 <% @tuits.each do |tuit| %>
   <%= render partial: "tuits/tuit", locals:{tuit:tuit} %>
 <% end %>
