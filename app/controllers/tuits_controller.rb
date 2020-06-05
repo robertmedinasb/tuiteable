@@ -29,6 +29,16 @@ class TuitsController < ApplicationController
     end
   end
 
+  def create_comment
+    params.permit(:id, :commenter, :comment)
+    @tuit = Tuit.find(params[:id])
+    if @tuit.comments << Comment.new(body: params[:comment], user_id: params[:commenter])
+      redirect_to tuit_path(@tuit)
+    else
+      render json: {ok:false}
+    end
+  end
+
   private
 
   def tuit_params
