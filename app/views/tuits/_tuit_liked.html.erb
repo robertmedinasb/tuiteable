@@ -26,12 +26,12 @@
           <% like = Like.find_by(user_id: current_user.id, tuit_id: tuit.id) %>
           <% class_like = "liked" unless like.nil?  %>
           <span class=""><%= tuit.comments_count%></span>
-          <%= link_to  root_path  + "like/" + tuit.id.to_s , remote: true, class:"like" do%>
+          <%= link_to  root_path  + "from_liked/" + tuit.id.to_s , remote: true, class:"like" do%>
             <i class="far fa-heart <%= class_like %>"></i>
             <span class="<%= class_like %>"><%= tuit.likes_count %></span>
           <% end %>
         <% else %>
-          <%= link_to  new_user_registration_path, remote: true, class: "comment" do%>
+          <%= link_to new_user_registration_path , remote: true, class: "comment" do%>
             <i class="far fa-comment "></i>
           <% end %>
           <span class=""><%= tuit.comments_count%></span>
