@@ -27,11 +27,9 @@
         <p class="alert"><%= alert %></p>
         <% unless current_page?(new_user_registration_path) %>
           <% if user_signed_in? %>
-            <%# <div class="coming-soon"> %>
-            <%# <img src="/features.png" alt="Comming soon!"> %>
-            <%# </div> %>
-            <span>Welcome, = current_user.username</span>
-            <%= render  "/layouts/soon" %>
+            <div class="coming-soon">
+              <img src="/features.png" alt="Comming soon!">
+            </div>
           <% else %>
             <%= render  "devise/sessions/new" %>
           <% end %>

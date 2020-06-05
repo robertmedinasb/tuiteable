@@ -2,10 +2,10 @@
   display: flex;
   padding: 15px;
   width: 100%;
-  position: relative;
 }
 .show__tuit-card {
   display: flex;
+  width: 100%;
   padding: 15px;
 }
 .tuit-avatar {
@@ -32,7 +32,7 @@
 }
 
 .tuit-body {
-  width: 600px;
+  max-width: 600px;
 }
 
 .show__body-info {
@@ -61,45 +61,48 @@
 }
 
 .tuit__create_comment {
-    padding: 15px;
-    border-top: 2px solid #999b9e;
-    border-bottom: 2px solid #999b9e;
+  padding: 15px;
+  border-top: 2px solid #999b9e;
+  border-bottom: 2px solid #999b9e;
 }
 
 .tuit__create_comment__body {
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
 }
 
 .tuit__create_comment__comment {
-    width: 600px;
-    height: 40px;
-    font-size: 24px;
-    background: transparent;
-    color: #999b9e;
-    border: none;
-    resize: none;
-    padding: 5px;
-    outline: none;
+  width: 600px;
+  height: 40px;
+  font-size: 24px;
+  background: transparent;
+  color: #999b9e;
+  border: none;
+  resize: none;
+  padding: 5px;
+  outline: none;
 }
 
 .tt_btn_solid {
-    font-weight: bold;
-    font-size: 16px;
-    background: #1da1f2;
-    border: 1px solid #1da1f2;
-    color: #fff;
-    padding: 1vh;
-    border-radius: 40px;
-    outline: none;
-    cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  background: #1da1f2;
+  border: 1px solid #1da1f2;
+  color: #fff;
+  padding: 1vh;
+  border-radius: 40px;
+  outline: none;
+  cursor: pointer;
+}
+.body.info #info-reactions:nth-child(2) {
+  display: none;
 }
 
 .tuit__create_comment__footer {
-    display: flex;
-    justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 }
 
 /*.tuit__comment img{*/
