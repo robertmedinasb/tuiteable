@@ -1,10 +1,12 @@
 <div class="back_nav">
   <div class="back_nav__link">
-    <a href="<%=url %>">
-      <img src="/assets/left_arrow.png">
-      <span class="back_nav__link__text">
-          <%=title %>
-      </span>
-    </a>
+    <% unless url.nil? %>
+      <a href="<%=url %>">
+        <img src="/assets/left_arrow.png">
+      </a>
+    <% end %>
+    <span class="back_nav__link__text">
+      <%=title %>
+    </span>
   </div>
 </div>

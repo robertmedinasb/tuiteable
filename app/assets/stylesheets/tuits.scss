@@ -1,3 +1,32 @@
 // Place all the styles related to the Tuits controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.liked {
+  color: #e0245e;
+}
+.nav-list:last-child {
+  width: 100%;
+}
+.nav-links a.sign-out-button {
+  width: fit-content;
+  color: #e0245e;
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: 1px solid #e0245e;
+}
+.back_nav,
+.side-nav {
+  top: 0;
+  background: #1d2128;
+  z-index: 2;
+}
+.side-nav {
+  top: 20px;
+  position: sticky;
+  margin-top: 10px;
+  z-index: 2;
+}
+.wrap-side-bar-login {
+  top: 0;
+  position: sticky;
+}
