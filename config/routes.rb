@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get 'users/profile/:id', to: 'users#show',as: 'user'
+  get 'users/profile/:id', to: 'users#show', as: 'user'
   get 'tuits/index'
-  resources :tuits, only: [:show]
+  resources :tuits, only: %i[show create]
   namespace :api do
-    resources :comments, only: [:index, :create, :destroy]
+    resources :comments, only: %i[index create destroy]
   end
   devise_for :users, controllers: {
     sessions: 'users/sessions',

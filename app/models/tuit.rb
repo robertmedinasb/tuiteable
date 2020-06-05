@@ -5,4 +5,8 @@ class Tuit < ApplicationRecord
   has_many :comments
   has_many :likes
   has_many :likes
+  def set_user!(user)
+    self.user_id = user.id
+    save!
+  end
 end

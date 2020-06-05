@@ -2,7 +2,11 @@
 
 class HomeController < ApplicationController
   def index
-    @tuits = Tuit.all.order(created_at: :asc)
+    @tuits = Tuit.limit(40).order(created_at: :desc)
+    if user_signed_in?
+    @user = User.find(current_user.id) 
+    @ntuit = Tuit.new
+    end
     render 'tuits/explorer'
   end
-end
+end 

@@ -10,7 +10,7 @@ $font-color: #ffffff;
 }
 body {
   font-family: "Roboto", sans-serif;
-  background-color: #1d2128;
+  background: #e5e5e5;
   color: white;
 }
 .home {
@@ -20,12 +20,13 @@ body {
   margin: 0 auto;
   justify-content: center;
   grid-template-columns: 15% 60% 25%;
+  background-color: $bg-color;
 }
 .home-section {
   border: 1px solid black;
 }
 .nav {
-  background: $bg-color;
+  // background: $bg-color;
 }
 
 .nav-links {
@@ -63,4 +64,11 @@ h2 {
   font-size: 16px;
   line-height: 20px;
   text-align: center;
+}
+.explorer-header {
+  height: 56px;
+  border-bottom: 2px solid #999b9e;
+}
+.explorer-header h1 {
+  margin: 16px auto 16px 16px;
 }

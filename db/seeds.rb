@@ -9,13 +9,13 @@ require 'faker'
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 admin_user_test = {
-  username: 'admin',
-  name: 'Admin',
+  username: 'admin3',
+  name: 'Admin3',
   location: 'Lima',
-  email: 'admin@mail.com',
-  bio: 'This is a test of Tuiteable user',
-  password: 'admin1',
-  password_confirmation: 'admin1'
+  email: 'admin3@mail.com',
+  bio: 'This is a test of Tuiteabgle user',
+  password: 'admin3',
+  password_confirmation: 'admin3'
 }
 puts 'Creating a Admin user...'
 User.create!(admin_user_test)
@@ -60,12 +60,12 @@ puts 'Creating Fakes likes '
 end
 puts 'Fakes likes was created...'
 puts 'Creating Fakes comments'
-80.times do
-  body = Faker::Lorem.paragraph
-  user = User.all.sample
-  tuit = Tuit.all.sample
-  Comment.create!(user: user, tuit: tuit, body: body)
-end
+# 80.times do
+#   body = Faker::Lorem.paragraph
+#   user = User.all.sample
+#   tuit = Tuit.all.sample
+#   Comment.create!(user: user, tuit: tuit, body: body)
+# end
 puts 'Fakes comments was created...'
 User.all.each do |user|
   user.avatar.attach(io: File.open(Dir.pwd + '/public/avatars/diego.png'),
