@@ -22,9 +22,8 @@
             <i class="far fa-heart <%= "liked" unless like.nil?  %> "></i>
           <% end %>
         <% else %>
-          <%= link_to  new_user_registration_path, class:"like" do%>
+          <%= link_to  new_user_registration_path do%>
             <i class="far fa-heart "></i>
-            <span class="<%= class_like %>"><%= tuit.likes_count %></span>
             <span><%= @tuit.likes_count %> <span class="grey_text">Likes</span></span>
           <% end %>
         <% end %>
