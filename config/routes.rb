@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get 'users/profile/:id', to: 'users#show'
+  get 'users/profile/:id', to: 'users#show',as: 'user'
   get 'tuits/index'
   resources :tuits, only: [:show]
   devise_for :users, controllers: {

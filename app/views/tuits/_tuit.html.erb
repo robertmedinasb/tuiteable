@@ -6,7 +6,7 @@
   <% end %>
   <div class="tuit-body">
     <div class="body-author">
-      <%= link_to  "users/profile/#{tuit.user.id}" do %>
+      <%= link_to user_path(tuit.user.id) do %>
         <strong class="author-name"><%= tuit.user.name %></strong>
         <span class="author-username grey_text">@<%=tuit.user.username %></span>
       <% end %>
