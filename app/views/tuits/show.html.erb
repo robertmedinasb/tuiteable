@@ -30,7 +30,7 @@
       </div>
     </div>
     <% if user_signed_in? %>
-      <div class="tuit__create_comment">
+      <form class="tuit__create_comment">
         <div class="tuit__create_comment__body">
          <div class="tuit-avatar">
             <img src="<%=(url_for(current_user.avatar)) %>" alt="">
@@ -41,7 +41,7 @@
           <button class="tt_btn_solid">Comment!</button>
         </div>
 
-      </div>
+      </form>
     <% end %>
 
     <div class="tuit__comments">
