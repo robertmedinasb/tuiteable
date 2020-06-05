@@ -34,7 +34,11 @@ class TuitsController < ApplicationController
     @tuit = Tuit.find(params[:id])
     @body = params[:body]
     if user_signed_in?
-      @comment = Comment.create!(user: current_user, tuit: @tuit, body: @body)
+      begin
+        @comment = Comment.create!(user: current_user, tuit: @tuit, body: @body)
+      rescue StandardError
+        flash[:alert] = "The body can't be blank, try again..."
+      end
       redirect_to tuit_path(@tuit)
     end
   end
