@@ -2,10 +2,12 @@
   display: flex;
   padding: 15px;
   width: 100%;
+  position: relative;
 }
 .show__tuit-card {
   display: flex;
-  width: 100%;
+  flex-direction: column;
+
   padding: 15px;
 }
 .tuit-avatar {
@@ -33,6 +35,7 @@
 
 .tuit-body {
   max-width: 600px;
+  width: 100%;
 }
 
 .show__body-info {
@@ -69,14 +72,14 @@
 .tuit__create_comment__body {
   display: grid;
   grid-template-rows: 1fr;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 60px auto;
   align-items: center;
 }
 
 .tuit__create_comment__comment {
-  width: 600px;
+  max-width: 600px;
   height: 40px;
-  font-size: 24px;
+  font-size: 18px;
   background: transparent;
   color: #999b9e;
   border: none;

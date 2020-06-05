@@ -12,6 +12,7 @@ class TuitsController < ApplicationController
 
   def show
     @tuit = Tuit.find(params[:id])
+    @comment = Comment.new if user_signed_in?
   end
 
   def like
@@ -29,10 +30,19 @@ class TuitsController < ApplicationController
     end
   end
 
+  def comment
+    @tuit = Tuit.find(params[:id])
+    @body = params[:body]
+    if user_signed_in?
+      @comment = Comment.create!(user: current_user, tuit: @tuit, body: @body)
+      redirect_to tuit_path(@tuit)
+    end
+  end
+
   def create_comment
     params.permit(:id, :commenter, :comment)
     @tuit = Tuit.find(params[:id])
-    if @tuit.comments << Comment.new(body: params[:comment], user_id: params[:commenter])
+    if @tuit.comments << Comment.create!(body: params[:comment], user_id: params[:commenter])
       redirect_to tuit_path(@tuit)
     else
       render json: { ok: false }

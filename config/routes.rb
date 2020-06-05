@@ -13,7 +13,6 @@ Rails.application.routes.draw do
   }
   get '/users/profile/:id/liked', to: 'users#liked'
   get '/like/:id', to: 'tuits#like'
-
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  post '/comment/:id', to: 'tuits#comment' # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: 'home#index'
 end
