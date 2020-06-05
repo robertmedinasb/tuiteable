@@ -23,7 +23,7 @@
         Joined <%=@user.created_at.strftime("%B, %Y") %>
       </div>
     </div>
-    <% if user_signed_in? %>
+    <% if user_signed_in? && current_user.id == @user.id %>
       <div class="profile__edit__button">
         <button class="tt_btn">Edit profile</button>
       </div>
