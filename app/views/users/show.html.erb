@@ -33,7 +33,8 @@
     <p id="profile_nav_tuits" class="visited"><%= link_to  "tuits", root_path+'users/profile/' + @user.id.to_s %></p>
     <p id="profile_nav_likes"><%= link_to  "likes", root_path + 'users/profile/' + "#{@user.id.to_s}/liked", remote: true %></p>
   </div>
-  <div class="profile__content">
+  <div class="profile__content" id="profile_content">
     <%= render  "users/profile_tuits", locals:{tuits: @tuits} %>
+    <%= render  "users/profile_tuits_liked", locals:{likes: @likes, owner: @owner } %>
   </div>
 </div>

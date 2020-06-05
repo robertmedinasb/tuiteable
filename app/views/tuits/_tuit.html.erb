@@ -17,7 +17,7 @@
         <p><%= tuit.body  %></p>
       </div>
     <% end %>
-    <div class="body-info">
+    <div class="body-info" id="body-info">
       <div class="info-reactions" id="info-reactions">
         <% if user_signed_in? %>
           <%= link_to  root_path , remote: true, class: "comment" do%>
@@ -35,7 +35,7 @@
             <i class="far fa-comment "></i>
           <% end %>
           <span class=""><%= tuit.comments_count%></span>
-          <%= link_to  new_user_registration_path, class:"like" do%>
+          <%= link_to  new_user_registration_path, class:"like", id:"like" do%>
             <i class="far fa-heart "></i>
             <span class="<%= class_like %>"><%= tuit.likes_count %></span>
           <% end %>
