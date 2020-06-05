@@ -31,7 +31,11 @@
             <span class="<%= class_like %>"><%= tuit.likes_count %></span>
           <% end %>
         <% else %>
+<<<<<<< HEAD
           <%= link_to root_path + "like/" + tuit.id.to_s, remote: true, class: "comment" do %>
+=======
+          <%= link_to  new_user_registration_path, remote: true, class: "comment" do%>
+>>>>>>> 4dba3fdef46ffa5a7f7e3d8518366f36c9201ad9
             <i class="far fa-comment "></i>
           <% end %>
           <span class=""><%= tuit.comments_count %></span>

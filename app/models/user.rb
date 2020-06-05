@@ -24,7 +24,7 @@ class User < ApplicationRecord
       user.location = 'Peru'
       user.email = auth.info.email
       user.bio = auth.info.user_about_me
-      user.name = auth.info.namenav
+      user.name = auth.info.name
       user.username = auth.info.name.downcase.gsub(/\s/, '') + rand(1..100).to_s
       user.password = Devise.friendly_token[0, 20]
       user.avatar.attach(io: downloaded_image, filename: 'avatar.jpg', content_type: downloaded_image.content_type)
