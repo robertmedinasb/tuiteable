@@ -16,5 +16,20 @@ class ProfilesController < ApplicationController
     end
   end
 
-  def edit; end
+  def follow
+    @user_to_follow = User.find(params[:id])
+    Follow.create!(follower_id: current_user.id, followed_user_id: @user_to_follow.id)
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def unfollow
+    @user_to_follow = User.find(params[:id])
+    follow = Follow.find_by(follower_id: current_user.id, followed_user_id: @user_to_follow.id)
+    Follow.destroy(follow.id)
+    respond_to do |format|
+      format.js
+    end
+  end
 end
