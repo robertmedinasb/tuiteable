@@ -6,7 +6,7 @@
   <div class="tuit-new-form">
   <%= form_for @ntuit do |f| %>  
     
-    <%= f.text_field :body, class: "tuit-new-txt", placeholder: "What you are thinking about is..." %><br /> 
+    <%= f.text_field :body, class: "tuit-new-txt", placeholder: "What you are thinking about is...", minlength:"0", maxlength:"280" %><br /> 
     
     
     <%= f.submit "tuiteable!", class: "tuit-new-btn"%>
