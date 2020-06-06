@@ -1,29 +1,29 @@
 .tuit-card {
-  display: flex;
   padding: 15px;
   width: 100%;
   position: relative;
+  display: grid;
+  grid-template-columns: 70px auto;
 }
 .show__tuit-card {
   display: flex;
   flex-direction: column;
   padding: 15px;
+  display: grid;
 }
-.tuit-body {
-  margin: 17px auto 17px 0px;
-}
+
 .tuit-avatar {
-  border-radius: 40px;
+  border-radius: 50%;
   width: 50px;
   height: 50px;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 15px 10px auto 15px;
 }
 .tuit-avatar img {
-  height: 50px;
+  width: 100%;
+  max-width: 50px;
 }
 
 .body-author {
@@ -36,7 +36,7 @@
 
 .tuit-body {
   max-width: 600px;
-  width: 100%;
+  width: 80%;
 }
 
 .show__body-info {
@@ -88,7 +88,10 @@
   padding: 5px;
   outline: none;
 }
-
+.tuit__create_comment__body .tuit-avatar {
+  margin: 0;
+  margin-top: 10px;
+}
 .tt_btn_solid {
   font-weight: bold;
   font-size: 16px;
@@ -113,17 +116,27 @@
 /*}*/
 .tuit-new {
   display: flex;
-  flex-direction: row;
   border-bottom: 4px solid #999b9e;
   padding-bottom: 15px;
 }
+.tuit-new .tuit-avatar {
+  width: 15%;
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+.tuit-new .tuit-avatar img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
 .tuit-new-btn {
-  width: 84px;
   height: 28px;
   background: #1da1f2;
   border-radius: 100px;
   border-style: none;
   font-weight: bold;
+  padding: 5px 7px;
   font-size: 16px;
   line-height: 20px;
   color: #ffffff;
@@ -139,7 +152,27 @@
   color: #ffffff;
 }
 .tuit-new-form {
-  width: 100%;
+  width: 90%;
   text-align: right;
   padding-right: 15px;
+}
+.new_tuit input {
+  font-size: 18px;
+}
+.tuit-delete {
+  text-align: center;
+  margin: 15px 10px auto 0px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.tuit-delete a {
+  color: #e0245e;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 4px 8px;
+  border-radius: 15px;
+  border: 1px solid#e0245e;
+  text-decoration: none;
 }

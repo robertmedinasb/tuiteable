@@ -37,7 +37,7 @@ class TuitsController < ApplicationController
       begin
         @comment = Comment.create!(user: current_user, tuit: @tuit, body: @body)
       rescue StandardError
-        flash[:alert] = "The body can't be blank, try again..."
+        flash[:alert] = "Comment's length must be greater than 0 and not exceed 280 characters."
       end
       redirect_to tuit_path(@tuit)
     end
@@ -53,32 +53,21 @@ class TuitsController < ApplicationController
     end
   end
 
-  private
+  def create
+    p @ntuit = Tuit.create!(body: params[:tuit][:body], user: current_user)
+    redirect_to root_path
+  rescue StandardError
+    flash[:alert] = "Tuit's length must be greater than 0 and not exceed 280 characters."
+    redirect_to root_path
+  end
+
+  def destroy
+    @dltuit = Tuit.find(params[:id])
+    @dltuit.destroy
+    redirect_to root_path
+  end
 
   def tuit_params
-    params.require(:tuit).permit(:body, :user_id, :tuit_id, :created_at, :updated_at)
-    @tuits = Tuit.all.order(created_at: :desc)
-  end
-
-  def create
-    @ntuit = Tuit.new(tuit_params)
-    @ntuit.set_user!(current_user)
-    @ntuit.save
-    if @ntuit.save
-      redirect_to root_path
-    else
-      flash[:alert] = "Tuit not created"
-    end    
-  end
-  def destroy
-   @dltuit = Tuit.find(params[:id])
-   @dltuit.destroy
-   redirect_to root_path
-  end
-
-  private
-    def tuit_params
-      params.require(:tuit).permit(:body, :user_id)
-    end
+    params.require(:tuit).permit(:body, :user_id)
   end
 end

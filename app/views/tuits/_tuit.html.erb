@@ -28,7 +28,7 @@
           <% end %>
           <% like = Like.find_by(user_id: current_user.id, tuit_id: tuit.id) %>
           <% class_like = "liked" unless like.nil? %>
-          <%= link_to root_path + "like/" + tuit.id.to_s, class: "like" do %>
+          <%= link_to root_path + "like/" + tuit.id.to_s, class: "like", remote:true do %>
             <i class="far fa-heart <%= class_like %>"></i>
             <span class="<%= class_like %>"><%= tuit.likes_count %></span>
           <% end %>

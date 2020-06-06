@@ -20,7 +20,7 @@
       </div>
       <div class="profile__footer__date">
         <img src="/assets/calendar.png" alt="">
-        Joined <%=@user.created_at.strftime("%B, %Y") %>
+        Joined <%=@user.created_at.strftime("%d %B, %Y") %>
       </div>
     </div>
     <% if user_signed_in? && current_user.id == @user.id %>

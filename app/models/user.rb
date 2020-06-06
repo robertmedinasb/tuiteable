@@ -14,9 +14,9 @@ class User < ApplicationRecord
 
   has_many :likes, through: :tuits
   has_many :comments, through: :tuits
-  has_many :tuits
-  has_many :likes
-  has_many :comments
+  has_many :tuits, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :comments, dependent: :destroy
   has_one_attached :avatar
   validate :avatar_validation
 
