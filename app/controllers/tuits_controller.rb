@@ -67,7 +67,18 @@ class TuitsController < ApplicationController
     if @ntuit.save
       redirect_to root_path
     else
-      render ‘not save tweet’
+      flash[:alert] = "Tuit not created"
+    end    
+  end
+  def destroy
+   @dltuit = Tuit.find(params[:id])
+   @dltuit.destroy
+   redirect_to root_path
+  end
+
+  private
+    def tuit_params
+      params.require(:tuit).permit(:body, :user_id)
     end
   end
 end

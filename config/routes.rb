@@ -3,10 +3,10 @@
 Rails.application.routes.draw do
   get 'profiles/profile/:id', to: 'profiles#show', as: 'profile'
   get 'tuits/index'
-  resources :tuits, only: %i[show create]
   namespace :api do
     resources :comments, only: %i[index create destroy]
   end
+  resources :tuits
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     sessions: 'users/sessions',

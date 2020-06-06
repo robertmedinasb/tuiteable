@@ -45,4 +45,9 @@
       </div>
     </div>
   </div>
+  <% if user_signed_in? %>
+    <% if (current_user.id == tuit.user.id) %>
+      <%= render partial: "tuits/delete-tuit", locals:{tuit_id:tuit.id} %>
+    <% end %>
+  <% end %>
 </div>
