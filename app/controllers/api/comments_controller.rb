@@ -9,6 +9,8 @@ class Api::CommentsController < ApiController
     render json: @comments, status: :ok
   end
 
+  def
+
   def show
     @comment = if params[:tuit_id].nil?
                  Comment.find(params[:id])
