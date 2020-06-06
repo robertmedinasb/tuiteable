@@ -34,7 +34,7 @@
   </div>
   <div class="field-signup-bio">
     <%= f.label :bio%>
-    <%= f.text_area :bio %>
+    <%= f.text_area :bio, maxlength: 160 %>
   </div>
   <div class="sign_up_button actions">
     <%= f.submit "Create an Account" %>

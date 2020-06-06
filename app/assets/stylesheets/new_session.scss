@@ -57,7 +57,6 @@ $font-color: #ffffff;
 }
 .new_user .field input {
   width: 100%;
-  background: #ffffff;
   border-radius: 15px;
   height: 40px;
   border-style: none;
@@ -65,6 +64,7 @@ $font-color: #ffffff;
 }
 .field input[type="submit"] {
   cursor: pointer;
+  background: #1da1f2;
 }
 .field label {
   align-self: flex-start;
