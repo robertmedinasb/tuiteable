@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   }
   put 'profiles/edit', to: 'profiles#edit'
   get '/profiles/profile/:id/liked', to: 'profiles#liked'
+  get '/follow/:id', to: 'profiles#follow'
+  get '/unfollow/:id', to: 'profiles#unfollow'
   get '/like/:id', to: 'tuits#like'
   post '/comment/:id', to: 'tuits#comment' # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: 'home#index'
