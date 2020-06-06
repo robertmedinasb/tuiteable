@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 include Devise::Controllers::Helpers
 
 class Api::TuitsController < ApiController
-    skip_before_action :authorized, only: :index
+  skip_before_action :authorized, only: :index
   def index
     p current_user
     @tuits = if params[:user_id].nil?
@@ -33,9 +35,7 @@ class Api::TuitsController < ApiController
     render json: @tuit, status: :ok
   end
 
-  def update
-
-  end
+  def update; end
 
   def destroy
     @tuit = if Tuit.exists?(params[:id])
@@ -48,12 +48,12 @@ class Api::TuitsController < ApiController
       @tuit.destroy
       render json: {}, status: :no_content
     else
-      render json: { ok: false, message: "Tuit doesn't exist!"}
+      render json: { ok: false, message: "Tuit doesn't exist!" }
     end
-
   end
 
   private
+
   def tuit_params
     params.require(:tuit).permit(:body, :user_id, :tuit_id, :created_at, :updated_at)
   end
