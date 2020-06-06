@@ -6,6 +6,17 @@ Rails.application.routes.draw do
   resources :tuits, only: %i[show create]
   namespace :api do
     resources :comments, only: %i[index create destroy]
+    resources :tuits, only: %i[index show update destroy]
+
+    # Nested routes
+    resources :tuits do
+      resources :comments, only: %i[index create destroy]
+      resources :likes, only: %i[index create destroy]
+    end
+
+    resources :users do
+      resources :tuits
+    end
   end
   devise_for :users, controllers: {
     sessions: 'users/sessions',
