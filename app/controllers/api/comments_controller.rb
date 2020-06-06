@@ -38,11 +38,11 @@ class Api::CommentsController < ApiController
       render plain: "This tuit doesn't have any comment"
     else
       begin
-        @comment = @comments.find(params[:id])
+        @comment = @comeximents.find(params[:id])
         render json: {
           messages: 'The comment was succesfully deleted',
           data: @comment
-        }
+        }, status: :ok
         @comment.destroy
       rescue StandardError => e
         render plain: "This comment doesn't have any comments"
