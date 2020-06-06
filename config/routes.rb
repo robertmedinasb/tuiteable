@@ -3,8 +3,24 @@
 Rails.application.routes.draw do
   get 'profiles/profile/:id', to: 'profiles#show', as: 'profile'
   get 'tuits/index'
-  namespace :api do
+  resources :tuits, only: %i[show create]
+  namespace :api, defaults: { format: 'json' } do
+    devise_scope :user do
+      post 'sign_up', to: 'registrations#create'
+      post 'sign_in', to: 'sessions#create'
+      post 'sign_out', to: 'sessions#destroy'
+    end
     resources :comments, only: %i[index create destroy]
+    resources :tuits
+    # Nested routes
+    resources :tuits do
+      resources :comments, only: %i[index create destroy]
+      resources :likes, only: %i[index create destroy show]
+    end
+
+    resources :users do
+      resources :tuits
+    end
   end
   resources :tuits
   devise_for :users, controllers: {

@@ -8,6 +8,9 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
   validates :username, uniqueness: true
   validates :bio, length: { maximum: 500 }
+
+  acts_as_token_authenticatable
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   devise :omniauthable, omniauth_providers: %i[facebook github]
