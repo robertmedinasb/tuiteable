@@ -14,6 +14,11 @@ class TuitsController < ApplicationController
     render ‘not save tweet’
     end    
   end
+  def destroy
+   @dltuit = Tuit.find(params[:id])
+   @dltuit.destroy
+   redirect_to root_path
+  end
 
   private
     def tuit_params

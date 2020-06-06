@@ -258,3 +258,21 @@ div.sign_up_button input {
   text-decoration: none;
   background-color: $bg-color;
 }
+/*----- delete tuit ---*/
+.tuit-delete {
+  text-align: center;
+  margin: 15px 10px auto 0px;
+}
+.tuit-delete a {
+  color: #e0245e;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 4px 8px;
+  border-radius: 100px;
+  border-style: solid;
+  border-color: #e0245e;
+  border-width: 3px;
+  text-decoration: none;
+  background-color: $bg-color;
+}
