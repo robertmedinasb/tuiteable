@@ -39,5 +39,16 @@
   <div class="sign_up_button actions">
     <%= f.submit "Create an Account" %>
   </div>
-  <%= render "devise/shared/links" %>
+  <div class="actions-face" style="width:fit-content; padding:0 6px">
+    <%= link_to  user_facebook_omniauth_authorize_path do%>
+      <i class="fab fa-facebook-f"></i>
+      Sign up with Facebook
+    <% end %>
+  </div>
+  <div class="actions-git" style="width:fit-content; padding:0 6px">
+    <%= link_to  user_github_omniauth_authorize_path do%>
+      <i class="fab fa-github"></i>
+      Sign up with Github    <% end %>
+  </div>
+  <%= link_to  "Back", root_path %>
 <% end %>

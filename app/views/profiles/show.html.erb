@@ -25,16 +25,16 @@
     </div>
     <% if user_signed_in? && current_user.id == @user.id %>
       <div class="profile__edit__button">
-        <button class="tt_btn">Edit profile</button>
+        <%= link_to  "Edit profile", edit_user_registration_path(current_user), class:"tt_btn"%>
       </div>
     <% end %>
   </div>
   <div class="profile__nav">
-    <p id="profile_nav_tuits" class="visited"><%= link_to  "tuits", root_path+'users/profile/' + @user.id.to_s %></p>
-    <p id="profile_nav_likes"><%= link_to  "likes", root_path + 'users/profile/' + "#{@user.id.to_s}/liked", remote: true %></p>
+    <p id="profile_nav_tuits" class="visited"><%= link_to  "tuits", root_path+'profiles/profile/' + @user.id.to_s %></p>
+    <p id="profile_nav_likes"><%= link_to  "likes", root_path + 'profiles/profile/' + "#{@user.id.to_s}/liked", remote: true %></p>
   </div>
   <div class="profile__content" id="profile_content">
-    <%= render  "users/profile_tuits", locals:{tuits: @tuits} %>
-    <%= render  "users/profile_tuits_liked", locals:{likes: @likes, owner: @owner } %>
+    <%= render  "profiles/profile_tuits", locals:{tuits: @tuits} %>
+    <%= render  "profiles/profile_tuits_liked", locals:{likes: @likes, owner: @owner } %>
   </div>
 </div>

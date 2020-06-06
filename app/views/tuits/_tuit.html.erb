@@ -6,7 +6,7 @@
   <% end %>
   <div class="tuit-body">
     <div class="body-author">
-      <%= link_to user_path(tuit.user.id) do %>
+      <%= link_to profile_path(tuit.user.id) do %>
         <strong class="author-name"><%= tuit.user.name %></strong>
         <span class="author-username grey_text">@<%= tuit.user.username %></span>
       <% end %>
@@ -20,12 +20,14 @@
     <div class="body-info" id="body-info">
       <div class="info-reactions" id="info-reactions">
         <% if user_signed_in? %>
-          <%= link_to root_path, remote: true, class: "comment" do %>
-            <i class="far fa-comment "></i>
+          <% comment = Comment.find_by(user_id: current_user.id, tuit_id: tuit.id) %>
+          <% class_comment = 'liked' unless comment.nil? %>
+          <%= link_to tuit_path(tuit), class: "comment" do %>
+            <i class="far fa-comment <%= class_comment %> "></i>
+            <span class="<%= class_comment %>"><%= tuit.comments_count %></span>
           <% end %>
           <% like = Like.find_by(user_id: current_user.id, tuit_id: tuit.id) %>
           <% class_like = "liked" unless like.nil? %>
-          <span class=""><%= tuit.comments_count %></span>
           <%= link_to root_path + "like/" + tuit.id.to_s, remote: true, class: "like" do %>
             <i class="far fa-heart <%= class_like %>"></i>
             <span class="<%= class_like %>"><%= tuit.likes_count %></span>

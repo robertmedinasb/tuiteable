@@ -1,4 +1,4 @@
-$('#profile_content').html("<%= j render partial: "/users/profile_tuits_liked", locals:{likes: @likes}%>");
+$('#profile_content').html("<%= j render partial: "/profiles/profile_tuits_liked", locals:{likes: @likes}%>");
 $('#profile_nav_likes').addClass("visited")
 $('#profile_nav_tuits').removeClass("visited")
 $('#profile_tuits').addClass("hidden")

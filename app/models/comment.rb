@@ -5,3 +5,5 @@ class Comment < ApplicationRecord
   belongs_to :user, counter_cache: true
   validates :body, presence: true
 end
+# , dependent: :destroy
+# , dependent: :destroy

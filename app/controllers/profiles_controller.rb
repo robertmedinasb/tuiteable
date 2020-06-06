@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class UsersController < ApplicationController
+class ProfilesController < ApplicationController
   def show
     @user = User.find(params[:id])
     @tuits = @user.tuits
@@ -15,4 +15,6 @@ class UsersController < ApplicationController
       format.js
     end
   end
+
+  def edit; end
 end
