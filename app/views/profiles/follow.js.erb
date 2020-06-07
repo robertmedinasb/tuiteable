@@ -1,1 +1,2 @@
 $('#refresh').html("<%= escape_javascript(render partial: "profiles/follows", locals: { user: user, follow: @follow} )%>");
+$('#suggested-<%= user.id %>').html("<%= escape_javascript(render partial: "profiles/follow_button", locals: { user: user, follow: @follow} )%>");

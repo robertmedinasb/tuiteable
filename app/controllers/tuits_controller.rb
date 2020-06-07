@@ -11,6 +11,11 @@ class TuitsController < ApplicationController
   end
 
   def show
+    @users = User.all.sample(5)
+    unless @users.find(current_user).nil?
+      @users -= [current_user]
+      @users << User.all.sample
+    end
     @tuit = Tuit.find(params[:id])
     @comment = Comment.new if user_signed_in?
   end

@@ -6,7 +6,6 @@ class HomeController < ApplicationController
     @users = User.all.sample(5)
     unless @users.find(current_user).nil?
       @users -= [current_user]
-      @users << User.all.sample
     end
     if user_signed_in?
       @user = User.find(current_user.id)

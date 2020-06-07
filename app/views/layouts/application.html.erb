@@ -25,20 +25,28 @@
       <section class="side-bar" id="side-bar">
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
-        <% unless current_page?(new_user_registration_path) %>
+        <% if params[:id].nil? %>
           <% if user_signed_in? %>
             <div class="suggestions">
               <strong class="strong_suggestions">You may want to follow</strong>
-              <% @users[0..5].each do |user| %>
-                <div class="card_suggestion">
+              <% @users[0..4].each do |user| %>
+                <div class="card_suggestion" id="card_suggestion-<%=user.id %>">
                   <div class="tuit-avatar">
+                  <%= link_to   profile_path(user) do %>
                     <img  src="<%=url_for(user.avatar)%>" alt="<%=user.name %>">
+                  <% end %>
                   </div>
-                  <div class="suggestion-user">
-                    <strong class="strong_suggestions"><%= user.name %></strong>
-                    <span>@<%= user.username %></span>
+                  <div class="suggestion-user" id="suggestion-user-<%=user.id %>">
+                    <% name = user.name.split[0..1] %>
+                    <% unless name[1].nil? %>
+                    <% lastname = name[1].chars[0].capitalize%>
+                    <% end %>
+                    <strong class="strong_suggestions"> <%= link_to   name[0] + ' '+ lastname.to_s, profile_path(user) %></strong>
+                    <span><%= link_to  "@#{user.username}", profile_path(user) %></span>
                   </div>
+                <div id="suggested-<%=user.id %>">
                   <%= render partial:  "profiles/follow_button", locals:{user: user}%>
+                </div>
                 </div>
               <% end %>
               <%= render  partial:"/layouts/footer" %>
