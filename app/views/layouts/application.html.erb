@@ -27,16 +27,26 @@
         <p class="alert"><%= alert %></p>
         <% unless current_page?(new_user_registration_path) %>
           <% if user_signed_in? %>
-            <div class="coming-soon">
-              <img src="/features.png" alt="Comming soon!">
+            <div class="suggestions">
+              <strong class="strong_suggestions">You may want to follow</strong>
+              <% @users[0..5].each do |user| %>
+                <div class="card_suggestion">
+                  <div class="tuit-avatar">
+                    <img  src="<%=url_for(user.avatar)%>" alt="<%=user.name %>">
+                  </div>
+                  <div class="suggestion-user">
+                    <strong class="strong_suggestions"><%= user.name %></strong>
+                    <span>@<%= user.username %></span>
+                  </div>
+                  <%= render partial:  "profiles/follow_button", locals:{user: user}%>
+                </div>
+              <% end %>
+              <%= render  partial:"/layouts/footer" %>
             </div>
           <% else %>
             <%= render  "devise/sessions/new" %>
           <% end %>
         <% end %>
-        <div class="footer-side-bar">
-          <p>Made with bravery by Gerard, Robert and Fer</p>
-        </div>
       </section>
     </main>
   </body>

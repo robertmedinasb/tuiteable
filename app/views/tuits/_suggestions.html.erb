@@ -1,0 +1,15 @@
+<div class="suggestions">
+  <strong class="strong_suggestions">You may want to follow</strong>
+  <% @users.each do |user| %>
+    <div class="card_suggestion">
+      <div class="tuit-avatar">
+        <img  src="<%=url_for(user.avatar)%>" alt="<%=user.name %>">
+      </div>
+      <div class="suggestion-user">
+        <strong class="strong_suggestions"><%= user.name %></strong>
+        <span>@<%= user.username %></span>
+      </div>
+      <%= render partial:  "follow_button", locals:{user: user}%>
+    </div>
+  <% end %>
+</div>
