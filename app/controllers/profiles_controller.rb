@@ -4,6 +4,7 @@ class ProfilesController < ApplicationController
   def show
     @user = User.find(params[:id])
     @tuits = @user.tuits
+    @follow = Follow.find_by(follower_id: current_user.id, followed_user_id: @user.id)
     @likes = @user.likes.map { |like| Tuit.find(like[:tuit_id]) }
   end
 
@@ -18,18 +19,16 @@ class ProfilesController < ApplicationController
 
   def follow
     @user_to_follow = User.find(params[:id])
-    Follow.create!(follower_id: current_user.id, followed_user_id: @user_to_follow.id)
-    respond_to do |format|
-      format.js
-    end
-  end
-
-  def unfollow
+    @follow = Follow.find_by(follower_id: current_user.id, followed_user_id: @user_to_follow.id)
+    if @follow.nil?
+      Follow.create!(follower_id: current_user.id, followed_user_id: @user_to_follow.id)
+    else
+      Follow.destroy(@follow.id)
+   end
+    @follow = Follow.find_by(follower_id: current_user.id, followed_user_id: @user_to_follow.id)
     @user_to_follow = User.find(params[:id])
-    follow = Follow.find_by(follower_id: current_user.id, followed_user_id: @user_to_follow.id)
-    Follow.destroy(follow.id)
     respond_to do |format|
-      format.js
+      format.js { render layout: false, locals: { user: @user_to_follow, follow: @follow } } # Add this line to you respond_to block
     end
   end
 end

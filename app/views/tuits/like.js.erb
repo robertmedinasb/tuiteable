@@ -1,2 +1,1 @@
-$('#tuit-card-<%= @tuit.id%> #info-reactions ').load(location.href +" #tuit-card-<%= @tuit.id%> #info-reactions");
-console.log("<%= @owner%>")
+$("#info-reactions-<%= @tuit.id %>").html("<%= escape_javascript(render partial: 'tuits/info_reactions', locals: { tuit: @tuit, likes_count: likes_count } ) %>");

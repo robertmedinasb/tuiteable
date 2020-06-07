@@ -26,15 +26,6 @@
   <% end %>
   <div class="profile__footer" id="follows_counts">
     <div id="refresh">
-      <div class="profile__footer__location">
-        <%=@user.followers.size %>
-        <strong> Followers</strong>
-      </div>
-      <div class="profile__footer__date">
-        <%=@user.followings.size %>
-        <strong> Following</strong>
-      </div>
-      <%= render  partial: "profiles/button_follow", locals:{user: @user} %>
+      <%= render  partial: "follows", locals:{user: @user} %>
     </div>
   </div>
-</div>

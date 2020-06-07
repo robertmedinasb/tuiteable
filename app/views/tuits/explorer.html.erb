@@ -5,5 +5,5 @@
   <%= render partial: "tuits/new-tuit", object: @user %>
 <% end %>
 <% @tuits.each do |tuit| %>
-  <%= render partial: "tuits/tuit", locals:{tuit:tuit} %>
+  <%= render partial: "tuits/tuit", locals:{tuit:tuit, likes_count: tuit.likes_count} %>
 <% end %>

@@ -25,8 +25,10 @@ class TuitsController < ApplicationController
     else
       Like.destroy(@like.id)
     end
+    @tuit = Tuit.find(params[:id])
+    @likes_count = @tuit.likes_count
     respond_to do |format|
-      format.js
+      format.js { render layout: false, locals: { likes_count: @likes_count } } # Add this line to you respond_to block
     end
   end
 

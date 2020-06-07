@@ -1,0 +1,20 @@
+<div class="profile__footer__followers">
+  <div>
+    <%=user.followers.size %>
+    <strong> Followers</strong>
+  </div>
+  <div>
+    <%=user.followings.size %>
+    <strong> Following</strong>
+  </div>
+</div>
+<% if current_user.id != user.id %>
+  <div class="follow-button" id="follow-button">
+    <% if @follow.nil? %>
+      <%= link_to "Follow"  ,root_path + "follow/#{user.id}", remote: :true, id:"button-follow-a", class:"unfollowed"%>
+    <% else %>
+      <%= link_to "Unfollow" , root_path + "follow/#{user.id}", remote: :true, id:"button-follow-a"%>
+    <% end %>
+  </div>
+<% end %>
+</div>

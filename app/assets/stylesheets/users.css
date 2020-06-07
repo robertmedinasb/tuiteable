@@ -72,8 +72,9 @@ a {
 .profile__footer {
   width: 70%;
   max-width: 450px;
-  justify-content: space-between;
+  justify-content: space-around;
   display: flex;
+  align-items: center;
 }
 
 .profile__footer__location,
@@ -97,4 +98,17 @@ a {
   justify-content: space-around;
   text-transform: uppercase;
   border-bottom: 2px solid #999b9e;
+}
+#refresh {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.profile__footer__followers {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
