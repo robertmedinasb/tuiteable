@@ -3,10 +3,6 @@
 class HomeController < ApplicationController
   def index
     @tuits = Tuit.limit(40).order(created_at: :desc)
-    @users = User.all.sample(5)
-    unless @users.find(current_user).nil?
-      @users -= [current_user]
-    end
     if user_signed_in?
       @user = User.find(current_user.id)
       @ntuit = Tuit.new

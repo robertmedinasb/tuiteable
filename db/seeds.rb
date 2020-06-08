@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'open-uri'
 require 'faker'
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
@@ -21,7 +22,7 @@ puts 'Creating a Admin user...'
 User.create!(admin_user_test)
 puts 'Admin user was created !!'
 puts 'Creating fakes users...'
-8.times do
+40.times do
   username = Faker::Internet.username
   email = Faker::Internet.email(name: username)
   name = Faker::Name.name
@@ -67,19 +68,14 @@ puts 'Creating Fakes comments'
 #   Comment.create!(user: user, tuit: tuit, body: body)
 # end
 puts 'Fakes comments was created...'
-User.all.each do |user|
-  user.avatar.attach(io: File.open(Dir.pwd + '/public/avatars/diego.png'),
-                     filename: 'diego.png', content_type: 'image/png')
-end
-#  Dir.foreach(Dir.pwd + '/public/avatars/') do |image|
-#   next if image == '.' || image == '..'
 
-#   tmp_hash = {}
-#   tmp_hash[:io] = File.open(Dir.pwd + '/public/avatars/' + image)
-#   tmp_hash[:filename] = image.to_s
-#   tmp_hash[:content_type] = 'image/png'
-#   images << tmp_hash
-# end
-# User.all[0..7].each do |user|
-#   user.avatar.attach(images.sample)
-# end
+def image_fetcher
+  open(Faker::Avatar.image)
+rescue StandardError
+  open('https://robohash.org/sitsequiquia.png?size=300x300&set=set1')
+end
+
+User.all.each do |user|
+  user.avatar.attach(io: image_fetcher,
+                     filename: "#{user.username}.png", content_type: 'image/png')
+end

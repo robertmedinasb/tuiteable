@@ -2,11 +2,6 @@
 
 class ProfilesController < ApplicationController
   def show
-    @users = User.all.sample(5)
-    unless @users.find(current_user).nil?
-      @users -= [current_user]
-      @users << User.all.sample
-    end
     @user = User.find(params[:id])
     @tuits = @user.tuits
     @follow = Follow.find_by(follower_id: current_user.id, followed_user_id: @user.id)

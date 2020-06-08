@@ -1,0 +1,23 @@
+<strong class="strong_suggestions">You may want to follow</strong>
+<% sort_users.each do |user| %>
+  <div class="card_suggestion" id="card_suggestion-<%=user.id %>">
+    <div class="tuit-avatar">
+      <%= link_to   profile_path(user) do %>
+        <img  src="<%=url_for(user.avatar)%>" alt="<%=user.name %>">
+      <% end %>
+    </div>
+    <div class="suggestion-user" id="suggestion-user-<%=user.id %>">
+      <% name = user.name.split[0..1] %>
+      <% unless name[1].nil? %>
+        <% lastname = name[1].chars[0].capitalize%>
+      <% end %>
+      <strong class="strong_suggestions"> <%= link_to   name[0] + ' '+ lastname.to_s, profile_path(user) %></strong>
+      <span><%= link_to  "@#{user.username}", profile_path(user) %></span>
+    </div>
+    <% follow = Follow.find_by(follower_id: current_user.id, followed_user_id: user.id) %>
+    <div id="suggested-<%=user.id %>">
+      <%= render partial:  "profiles/follow_button", locals:{user: user, follow: follow}%>
+    </div>
+  </div>
+<% end %>
+<%= render  partial:"/layouts/footer" %>
