@@ -30,7 +30,9 @@
             <%= render partial: "/profiles/suggestions" %>
           </div>
         <% else %>
+          <% unless current_page?(new_user_session_path) | current_page?(new_user_registration_path) %>
           <%= render  "devise/sessions/new" %>
+          <% end %>
         <% end %>
       </section>
     </main>

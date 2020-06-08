@@ -1,5 +1,29 @@
 $bg-color: #1d2128;
 $font-color: #ffffff;
+.welcome-title{
+  margin: 20px auto;
+  text-align: center;
+  padding-left: 40px;
+    max-width: 490px;
+}
+.welcome-description{
+  margin: 20px auto;
+  text-align: center;
+  padding-left: 40px;
+    max-width: 490px;
+}
+div.all-page{
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: inherit;
+    width: 100%;
+    background: #1d2128;
+    padding: 30px 0;
+    background-color: rgba(153, 155, 158, 0.25);
+    height: 100%;
+}
+
 .wrap-side-bar-login {
   display: flex;
   flex-direction: column;
