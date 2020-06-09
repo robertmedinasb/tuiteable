@@ -71,7 +71,7 @@ puts 'Fakes comments was created...'
 
 User.all.each_slice(10) do |users|
   users.each_with_index do |user, index|
-    user.avatar.attach(io: File.open(Dir.pwd + "/tmp/avatars/avatar#{index + 1}.png"),
+    user.avatar.attach(io: File.open(Dir.pwd + "/app/assets/avatars/avatar#{index + 1}.png"),
                        filename: "#{user.username}.png", content_type: 'image/png')
   end
 end
