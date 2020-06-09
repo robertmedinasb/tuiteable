@@ -111,13 +111,13 @@ div.all-page {
   li:last-child {
     display: none;
   }
-  .nav-links > .nav-list:last-child {
+  .nav-links > .nav-list:nth-child(4) {
     display: none;
   }
   .menu,
   #menu {
     position: fixed;
-    top: 40px;
+    top: 90px;
     height: 60px;
     width: 60px;
   }
@@ -125,7 +125,7 @@ div.all-page {
     opacity: 0;
   }
   .menu {
-    top: 70px;
+    top: 110px;
     left: 10px;
     display: flex;
     background: #000000;
@@ -146,15 +146,20 @@ div.all-page {
     transform: translateX(-100%);
     opacity: 0;
     left: 10px;
-
     position: fixed;
-    top: 120px;
+    top: 150px;
+    background: rgba(80, 80, 82, 0.918);
+    border: 2px solid #ffffff;
+    border-radius: 15px;
   }
   #menu:checked ~ .side-bar {
     transform: translateX(0);
     opacity: 1;
     z-index: 99;
-    background: rgba(80, 80, 82, 0.918);
+  }
+  p.notice {
+    max-width: fit-content;
+    text-align: center;
   }
   @keyframes button-menu {
     0% {

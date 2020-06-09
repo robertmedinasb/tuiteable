@@ -69,13 +69,9 @@ puts 'Creating Fakes comments'
 # end
 puts 'Fakes comments was created...'
 
-def image_fetcher
-  open(Faker::Avatar.image)
-rescue StandardError
-  open('https://robohash.org/sitsequiquia.png?size=300x300&set=set1')
-end
-
-User.all.each do |user|
-  user.avatar.attach(io: image_fetcher,
-                     filename: "#{user.username}.png", content_type: 'image/png')
+User.all.each_slice(10) do |users|
+  users.each_with_index do |user, index|
+    user.avatar.attach(io: File.open(Dir.pwd + "/public/avatar#{index + 1}.png"),
+                       filename: "#{user.username}.png", content_type: 'image/png')
+  end
 end
