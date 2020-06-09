@@ -14,7 +14,7 @@
         <span class="show__info-date grey_text"><%=@tuit.created_at.strftime("%I:%M %p - %b, %d") %></span>
       </div>
       <div class="show__body-info">
-        <div class="info-reactions" id="info-reactions">
+        <div class="info-reactions-<%= @tuit.id %>" id="info-reactions">
           <% if user_signed_in? %>
             <% like = Like.find_by(user_id: current_user.id, tuit_id: @tuit.id) %>
             <%= link_to  root_path + "like/" + @tuit.id.to_s , remote: true do%>
