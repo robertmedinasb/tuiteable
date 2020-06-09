@@ -1,0 +1,20 @@
+<div class="tuit__comment__user_picture tuit-avatar">
+  <img src="<%=(url_for(comment.user.avatar)) %>" alt="">
+</div>
+<div class="tuit-body">
+  <div class="body-author">
+    <%= link_to profile_path(comment.user.id) do %>
+      <strong class="author-name"><%= comment.user.name %></strong>
+      <span class="author-username grey_text">@<%=comment.user.username %></span>
+    <% end %>
+    <span class="info-date grey_text">- <%=comment.created_at.strftime("%b, %d") %></span>
+    <div class="body-text">
+      <p><%=comment.body%></p>
+    </div>
+  </div>
+  <% if user_signed_in? %>
+    <% if (current_user.id == comment.user_id) %>
+      <%= render partial: "tuits/delete-comment", locals:{tuit_id: comment.tuit_id, comment_id:comment.id} %>
+    <% end %>
+  <% end %>
+</div>

@@ -1,5 +1,19 @@
 $bg-color: #1d2128;
 $font-color: #ffffff;
+.welcome-title {
+  padding-left: 40px;
+  max-width: 490px;
+  width: 80%;
+  margin: 20px auto;
+  text-align: center;
+}
+.welcome-description {
+  padding-left: 40px;
+  max-width: 490px;
+  width: 80%;
+  margin: 20px auto;
+  text-align: center;
+}
 .wrap-side-bar-login {
   display: flex;
   flex-direction: column;

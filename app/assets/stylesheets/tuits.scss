@@ -7,7 +7,8 @@
 .nav-list:last-child {
   width: 100%;
 }
-.nav-links a.sign-out-button {
+.nav-links a.sign-out-button,
+div a.sign-out-button {
   width: fit-content;
   color: #e0245e;
   padding: 5px 10px;
@@ -60,18 +61,18 @@
 .home {
   min-height: 100vh;
 }
-.profile__details .follow-button{
+.profile__details .follow-button {
   margin: 20px 0;
 }
 
-#button-follow-a{
-  border: 1px solid #e0245e ;
+#button-follow-a {
+  border: 1px solid #e0245e;
   color: #e0245e;
 
   padding: 5px 7px;
   border-radius: 15px;
 }
-#button-follow-a.unfollowed{
-  border: 1px solid #1DA1F2 ;
-  color: #1DA1F2;
+#button-follow-a.unfollowed {
+  border: 1px solid #1da1f2;
+  color: #1da1f2;
 }

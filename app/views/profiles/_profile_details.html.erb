@@ -25,7 +25,9 @@
     </div>
   <% end %>
   <div class="profile__footer" id="follows_counts">
-    <% follow = Follow.find_by(follower_id: current_user.id, followed_user_id: @user.id) %>
+    <% if user_signed_in? %>
+      <% follow = Follow.find_by(follower_id: current_user.id, followed_user_id: @user.id) %>
+    <% end %>
     <div id="refresh-<%= user.id %>" class="refresh">
       <%= render  partial: "follows", locals:{user: @user, follow: follow} %>
     </div>

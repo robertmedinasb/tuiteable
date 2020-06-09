@@ -55,6 +55,15 @@ class TuitsController < ApplicationController
     end
   end
 
+  def delete_comment
+    @comment = Comment.find(params[:id])
+    @tuit = Tuit.find(@comment.tuit_id)
+    @comment.destroy
+    respond_to do |format|
+      format.js { render layout: false, locals: { tuit: @tuit } } # Add this line to you respond_to block
+    end
+  end
+
   def create
     p @ntuit = Tuit.create!(body: params[:tuit][:body], user: current_user)
     redirect_to root_path

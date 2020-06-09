@@ -4,7 +4,9 @@ class ProfilesController < ApplicationController
   def show
     @user = User.find(params[:id])
     @tuits = @user.tuits
-    @follow = Follow.find_by(follower_id: current_user.id, followed_user_id: @user.id)
+    if user_signed_in?
+      @follow = Follow.find_by(follower_id: current_user.id, followed_user_id: @user.id)
+    end
     @likes = @user.likes.map { |like| Tuit.find(like[:tuit_id]) }
   end
 

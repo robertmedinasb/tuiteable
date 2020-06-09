@@ -1,0 +1,9 @@
+<% if tuit.comments.empty? %>
+  <h1>No comments yet</h1>
+<% else %>
+  <% tuit.comments.order(created_at: :desc).each do |comment| %>
+    <div class="tuit__comment tuit-card">
+      <%= render  partial: "tuits/comment", locals:{comment: comment} %>
+    </div>
+  <% end %>
+<% end %>
